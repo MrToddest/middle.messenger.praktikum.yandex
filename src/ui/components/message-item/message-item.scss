@@ -1,0 +1,39 @@
+.message-item {
+  position: relative;
+  display: inline-flex;
+  align-items: flex-end;
+  font-weight: 500;
+  font-size: 12px;
+  text-align: left;
+  line-height: 15px;
+  width: auto;
+  max-width: 400px;
+  padding: 11px;
+  border-radius: 12px;
+  color: $white;
+
+  &__info {
+    float: right;
+    margin-left: 5px;
+  }
+
+  &__date {
+    font-weight: 500;
+    font-size: 9px;
+    line-height: 9px;
+  }
+
+  &--inbox {
+    border-top-left-radius: 0;
+    background-color: $grey;
+
+    .message-item__date {
+      color: $grey2;
+    }
+  }
+
+  &--outbox {
+    border-bottom-right-radius: 0;
+    background-color: $blue;
+  }
+}

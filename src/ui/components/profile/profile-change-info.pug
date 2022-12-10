@@ -1,0 +1,26 @@
+include ../../elements/input/input
+include ../../elements/button/button
+include ../../elements/link/link
+
+include profile-item
+
+form.profile
+  .profile__header
+    .profile__img
+      <object data="../assets/icons/img.svg" title="avatar"></object>
+  .profile__main
+    +profileItem('Почта')
+      +input('email', 'email', 'pochta@yandex.ru')
+    +profileItem('Логин')
+      +input('text', 'login', 'ivanivanov')
+    +profileItem('Имя')
+      +input('text', 'first_name', 'Иван')
+    +profileItem('Фамилия')
+      +input('text', 'second_name', 'Иванов')
+    +profileItem('Имя в чате')
+      +input('text', 'display_name', 'Иван')
+    +profileItem('Телефон')
+      +input('tel', 'phone', '+7 (909) 967 30 30')
+  .profile__footer
+      +button('submit', 'Сохранить', 'Сохранить')
+      +link('./profile.pug', 'Отмена')

@@ -1,0 +1,15 @@
+include ../../../elements/button/button
+include ../../../elements/link/link
+include ../../../elements/input/input
+
+form.form.form--signin
+  .form__body
+    .form__row
+      +input('text', 'login', 'Логин')
+    .form__row
+      +input('password', 'password', 'Пароль')
+  .form__footer
+    .form__row
+      +button('submit', 'Войти', 'Войти')
+    .form__row
+      +link('./signup.pug', 'Нет аккаунта?')

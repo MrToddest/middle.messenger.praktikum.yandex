@@ -1,0 +1,14 @@
+extends ../ui/layouts/chat/chat.pug
+
+block vars
+  - var title = 'Профиль'
+
+block mixins
+  
+
+block sidebar
+  a(href='./chat.pug').button.button--rounded.button--back
+    <object data="../assets/icons/arrow-left.svg" title="arrow-left"></object>
+
+block content
+  include ../ui/components/profile/profile-change-info.pug

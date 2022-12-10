@@ -1,0 +1,12 @@
+.header {
+  width: 320px;
+  padding: 20px 10px 15px;
+  border-bottom: 1px solid $grey;
+  text-align: right;
+
+  .link {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 12px;
+  }
+}

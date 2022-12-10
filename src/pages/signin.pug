@@ -1,0 +1,15 @@
+extends ../ui/layouts/default/default.pug
+
+block vars
+  - var title = 'Signin'
+  - var modalTitle = 'Вход'
+
+block mixins
+  include ../ui/components/section/section.pug
+  include ../ui/components/modal/modal.pug
+
+block content
+  main
+    +section()
+      +modal(modalTitle)
+        include ../ui/components/forms/signin-form/signin-form.pug

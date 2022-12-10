@@ -1,0 +1,23 @@
+include ../../elements/link/link
+
+include profile-item
+
+.profile
+  .profile__header
+    .profile__img
+      <object data="../assets/icons/img.svg" title="avatar"></object>
+    h1.profile__title= 'Иван'
+  .profile__main
+    +profileItem('Почта', 'pochta@yandex.ru')
+    +profileItem('Логин', 'ivanivanov')
+    +profileItem('Имя', 'Иван')
+    +profileItem('Фамилия', 'Иванов')
+    +profileItem('Имя в чате', 'Иван')
+    +profileItem('Телефон', '+7 (909) 967 30 30')
+  .profile__footer
+    +profileItem()
+      +link('./profile-change-info.pug', 'Изменить данные')
+    +profileItem()
+      +link('./profile-change-password.pug', 'Изменить пароль')
+    +profileItem()
+      +link('/', 'Выйти', 'link--red')

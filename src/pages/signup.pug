@@ -1,0 +1,15 @@
+extends ../ui/layouts/default/default.pug
+
+block vars
+  - var title = 'Signup'
+  - var modalTitle = 'Регистрация'
+
+block mixins
+  include ../ui/components/section/section.pug
+  include ../ui/components/modal/modal.pug
+
+block content
+  main
+    +section()
+      +modal(modalTitle)
+        include ../ui/components/forms/signup-form/signup-form.pug

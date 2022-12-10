@@ -1,0 +1,13 @@
+include ../message-item/message-item
+
+mixin messageView(data)
+  .message-view
+    each item in data
+      if item.type === 'date'
+        .message-view__date= item.value
+      else if item.type === 'inbox'
+        .message-view__inbox
+          +message(item)
+      else
+        .message-view__outbox
+          +message(item)

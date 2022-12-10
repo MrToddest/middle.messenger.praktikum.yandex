@@ -1,0 +1,35 @@
+.search {
+  position: relative;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 12px;
+  text-align: center;
+  margin-top: 20px;
+
+  label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    color: $grey2;
+    transform: translate(-50%, -50%);
+  }
+
+  input[type='search'] {
+    width: 100%;
+    padding: 10px;
+    border: 0;
+    border-radius: 5px;
+    background: $white;
+    color: $black;
+
+    &:focus {
+      outline: none;
+
+      & + label {
+        opacity: 0;
+      }
+    }
+  }
+}
