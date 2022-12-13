@@ -1,0 +1,22 @@
+include ../profile-item/profile-item
+
+form.profile
+  .profile__header
+    .profile__img
+      
+  .profile__main
+    +profileItem('Почта')
+      | !{email}
+    +profileItem('Логин')
+      | !{login}
+    +profileItem('Имя')
+      | !{firstName}
+    +profileItem('Фамилия')
+      | !{secondName}
+    +profileItem('Имя в чате')
+      | !{displayName}
+    +profileItem('Телефон')
+      | !{phone}
+  .profile__footer
+      | !{saveButton}
+      | !{escLink}

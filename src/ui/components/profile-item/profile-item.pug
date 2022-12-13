@@ -1,0 +1,8 @@
+mixin profileItem(name, value)
+  .profile-item
+    if name
+      .profile-item__name= name
+    if value
+      .profile-item__value= value
+    if block
+      block

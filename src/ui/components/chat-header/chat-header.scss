@@ -41,6 +41,10 @@
     cursor: pointer;
     transition: background 0.25s ease-in-out;
 
+    svg {
+      display: block;
+    }
+
     &:hover {
       background-color: $blue;
     }

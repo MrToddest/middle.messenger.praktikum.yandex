@@ -1,0 +1,9 @@
+include ../../ui/components/section/section.pug
+
+- var errorTitle = '500'
+- var errorDesc = 'Да да, мы уже исправляем'
+- var errorUrl = '/'
+
+main
+  +section()
+    include ../../ui/components/error-page/error-page.pug

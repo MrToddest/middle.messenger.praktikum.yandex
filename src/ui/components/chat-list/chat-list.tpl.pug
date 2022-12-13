@@ -1,0 +1,6 @@
+include chat-list-item
+
+nav.chat-list
+  if items
+    each item in items
+      +chatListItem(item)

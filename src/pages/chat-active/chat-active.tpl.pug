@@ -1,0 +1,14 @@
+extends ../../ui/layouts/chat/chat
+
+block mixins
+  include ../../ui/components/chat-view/chat-view
+
+block sidebar
+  | !{header}
+  | !{chats}
+
+block content
+  +chatView()
+    | !{chatHeader}
+    | !{messageView}
+    | !{chatFooter}
