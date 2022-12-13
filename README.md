@@ -9,7 +9,7 @@ npm start
 
 Макет - src/ui/макет.jpg
 
-Деплой - https://tourmaline-crepe-16545e.netlify.app/
+Деплой - https://timely-dusk-f92c07.netlify.app
 
 ## Блок общения с ревьюером 
 -
