@@ -14,8 +14,7 @@
     "start": "npm i && npm run build && node ./server.js",
     "dev": "parcel ./src/pages/**/*.html --port 3000",
     "build": "parcel build ./src/pages/*.html ./src/pages/**/*.html --no-scope-hoist --no-source-maps --no-cache",
-    "lint": "tsc --noEmit && eslint --fix ./src/**/*.ts && npx stylelint ./src/**/*.scss --fix",
-    "prepare": "npm install husky --save-dev"
+    "lint": "tsc --noEmit && eslint --fix ./src/**/*.ts && npx stylelint ./src/**/*.scss --fix"
   },
   "dependencies": {
     "normalize.css": "^8.0.1"
