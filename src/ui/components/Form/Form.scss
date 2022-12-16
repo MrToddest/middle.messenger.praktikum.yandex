@@ -1,0 +1,38 @@
+.form {
+  text-align: center;
+  margin: 0;
+
+  &__body {
+    margin-bottom: 40px;
+  }
+
+  &__row {
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &--flex {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__col {
+    width: 100%;
+    max-width: 45%;
+  }
+
+  .link {
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 11px;
+  }
+
+  &--signin {
+    .form__body {
+      margin-bottom: 170px;
+    }
+  }
+}

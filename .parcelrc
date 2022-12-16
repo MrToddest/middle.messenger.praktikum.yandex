@@ -1,3 +1,11 @@
 {
-  "extends": ["@parcel/config-default"]
+  "extends": ["@parcel/config-default"],
+  "transformers": {
+    "*.pug": ["parcel-transformer-pug-precompile"],
+    "*.svg": ["parcel-transformer-svg-sprite"]
+  },
+  "packagers": {
+    "*.html": "parcel-packager-svg-sprite",
+    "*.ts": "parcel-packager-svg-sprite"
+  }
 }

@@ -1,8 +1,0 @@
-mixin uiListItem(name, url)
-  li.ui-list__item
-    a.ui-list__link(href=url)= name
-
-mixin uilist(listItems)
-  ul.ui-list
-    each item in listItems
-      +uiListItem(item.name, item.url)

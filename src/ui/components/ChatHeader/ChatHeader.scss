@@ -1,0 +1,82 @@
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  height: 60px;
+  width: 100%;
+  padding: 12px;
+  border-top: 1px solid $black;
+  border-bottom: 1px solid $grey;
+  background-color: $black;
+
+  &__name {
+    display: flex;
+    align-items: center;
+  }
+
+  &__name-img {
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    margin-right: 10px;
+    overflow: hidden;
+    background-color: $white;
+  }
+
+  &__name-value {
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 13px;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: transparent;
+    transition: background 0.25s ease-in-out;
+
+    svg {
+      display: block;
+      pointer-events: none;
+    }
+
+    &.active {
+      background: $blue;
+
+      &:hover {
+        background: lighten($color: $blue, $amount: 10);
+      }
+    }
+  }
+
+  &__settings {
+    position: absolute;
+    top: 70px;
+    right: 12px;
+    width: 100%;
+    max-width: 220px;
+    padding: 10px 15px;
+    background: $black;
+    box-shadow: 0 0 6px rgb(0 0 0 / 14%);
+    border-radius: 12px;
+    display: none;
+
+    &-sep {
+      display: block;
+      height: 1px;
+      margin: 5px 0;
+      background-color: $grey;
+    }
+
+    &.active {
+      display: block;
+    }
+  }
+}

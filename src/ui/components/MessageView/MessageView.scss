@@ -1,0 +1,40 @@
+.message-view {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+  padding: 5px 12px 20px;
+
+  .scrolling {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__date {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 12px;
+    text-align: center;
+    padding: 30px 10px;
+    color: $grey2;
+  }
+
+  &__inbox,
+  &__outbox {
+    margin-bottom: 10px;
+  }
+
+  &__outbox {
+    display: flex;
+    justify-content: end;
+  }
+}

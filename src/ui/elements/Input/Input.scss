@@ -1,0 +1,21 @@
+.input {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 13px;
+  width: 100%;
+  max-width: 100%;
+  padding: 7px 0;
+  border: 0;
+  border-bottom: 1px solid $blue;
+  color: $white;
+  background: transparent;
+
+  &:focus {
+    outline: none;
+    border-color: lighten($color: $blue, $amount: 10);
+  }
+
+  .isError & {
+    border-color: $red;
+  }
+}

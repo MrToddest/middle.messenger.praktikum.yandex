@@ -1,0 +1,19 @@
+include ../../mixins/message-item/message-item
+include ../../mixins/section/section.pug
+
+.message-view(id='messageView')
+  if !chat
+    +section()
+      p Выберите чат чтобы отправить сообщение
+  if data.length > 0
+    .scrolling
+      .wrap
+        each item in data
+          if item.type === 'date'
+            .message-view__date= item.value
+          else if item.user_id === id || item.userId === id
+            .message-view__outbox
+              +message(item, 'outbox')
+          else
+            .message-view__inbox
+              +message(item, 'inbox')

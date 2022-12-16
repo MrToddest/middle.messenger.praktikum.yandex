@@ -28,14 +28,17 @@ module.exports = {
       {
         groups: [
           // common types
-          ['^@/types'],
-          // Internal packages.
-          // api
-          ['^@?\\/api'],
+          ['^src/types'],
+          // constants
+          ['^src/constants'],
           // utils
-          ['^@?\\/utils'],
+          ['^src?\\/utils'],
+          // api
+          ['^src?\\/api'],
+          // router and controllers
+          ['^src?\\/router', '^src?\\/controllers'],
           // UI
-          ['^@?\\/ui\\/[^ce]', '^@?\\/ui\\/e', '^@?\\/ui\\/c'],
+          ['^src?\\/ui\\/[^ce]', '^src?\\/ui\\/e', '^src?\\/ui\\/c'],
           // Side effect imports.
           ['^\\u0000'],
           // Parent imports. Put `..` last.

@@ -1,0 +1,10 @@
+include ../../ui/mixins/section/section.pug
+include ../../ui/mixins/error-page/error-page.pug
+
+- var errorTitle = '500'
+- var errorDesc = 'Мы уже фиксим'
+- var errorUrl = '/'
+
+main
+  +section()
+    +errorPage(errorTitle, errorDesc, errorUrl)
