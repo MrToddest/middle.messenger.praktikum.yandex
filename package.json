@@ -4,7 +4,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/deeppines/middle.messenger.praktikum.yandex"
+    "url": "https://github.com/MrToddest/middle.messenger.praktikum.yandex"
   },
   "engines": {
     "node": ">= 14"
