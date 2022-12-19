@@ -20,7 +20,7 @@ class ChatFooter extends Block {
     });
 
     this.childrens.icon = new Icon({
-      id: iconClip,
+      id: iconClip.id,
       width: 32,
       height: 32,
     });

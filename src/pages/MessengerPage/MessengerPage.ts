@@ -10,7 +10,7 @@ import ChatFooter from 'src/ui/components/ChatFooter/ChatFooter';
 import ChatHeader from 'src/ui/components/ChatHeader/ChatHeader';
 import ChatList from 'src/ui/components/ChatList/ChatList';
 import AddChatForm from 'src/ui/components/Form/AddChatForm/AddChatForm';
-import Header from 'src/ui/components/Header/header';
+import Header from 'src/ui/components/Header/Header';
 import MessageView from 'src/ui/components/MessageView/MessageView';
 import ModalBackdrop from 'src/ui/components/ModalBackdrop/ModalBackdrop';
 

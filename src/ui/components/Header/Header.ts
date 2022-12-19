@@ -16,7 +16,7 @@ class Header extends Block {
       name: 'Профиль',
       mod: 'link--grey link--icon',
       block: new Icon({
-        id: arrowRight,
+        id: arrowRight.id,
         width: 6,
         height: 10,
       }),

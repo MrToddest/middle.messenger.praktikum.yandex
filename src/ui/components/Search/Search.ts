@@ -18,7 +18,7 @@ class Search extends Block {
 
   protected initChildren() {
     this.childrens.icon = new Icon({
-      id: iconSearch,
+      id: iconSearch.id,
       width: 20,
       height: 20,
     });

@@ -21,7 +21,7 @@ class PasswordPage extends Block {
     });
 
     this.childrens.icon = new Icon({
-      id: arrowLeft,
+      id: arrowLeft.id,
       width: 24,
       height: 24,
     });

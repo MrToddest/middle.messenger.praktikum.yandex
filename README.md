@@ -9,7 +9,9 @@ npm start
 
 Макет - src/ui/макет.jpg
 
-Деплой - https://beamish-duckanoo-537fd2.netlify.app
+Деплой - (wait)
+
+Heroku - (wait)
 
 ## Блок общения с ревьюером
 -

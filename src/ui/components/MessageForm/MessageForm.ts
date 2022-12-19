@@ -35,7 +35,7 @@ class MessageForm extends Block {
       name: 'send',
       classes: 'button--rounded button--back message-form__send',
       block: new Icon({
-        id: arrowLeft,
+        id: arrowLeft.id,
         width: 24,
         height: 24,
       }),
