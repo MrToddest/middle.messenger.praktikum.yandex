@@ -1,0 +1,15 @@
+.chat-header(
+  class= !id ? 'hidden' : ''
+)
+  .chat-header__name
+    .chat-header__name-img
+    .chat-header__name-value= title
+  | !{settings}
+  .chat-header__settings(id="settings")
+    | !{addUser}
+    | !{delUser}
+    span.chat-header__settings-sep
+    | !{delChat}
+  | !{addUserModal}
+  | !{delUserModal}
+  | !{delChatModal}

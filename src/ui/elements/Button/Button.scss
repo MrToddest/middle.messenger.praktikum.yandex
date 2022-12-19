@@ -1,0 +1,108 @@
+.button {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 13px;
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  color: $white;
+  background-color: $blue;
+  transition: background-color 0.25s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: lighten($color: $blue, $amount: 5);
+  }
+
+  &--rounded {
+    border-radius: 50%;
+  }
+
+  &--gray {
+    background-color: $grey;
+  }
+
+  &--back {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    margin: auto 18px auto 17px;
+  }
+
+  &--link {
+    display: inline;
+    text-align: left;
+    width: auto;
+    padding: 0;
+    border-radius: 0;
+    color: $blue;
+    background: transparent;
+    transition: color 0.25s ease-in-out;
+
+    &:hover {
+      color: lighten($color: $blue, $amount: 10);
+      background: transparent;
+    }
+  }
+
+  &--link-red {
+    color: $red;
+
+    &:hover {
+      color: lighten($color: $red, $amount: 8);
+    }
+  }
+
+  &--avatar {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 0 25px;
+    background: transparentize($color: $black, $amount: 0.5);
+    color: $c-white;
+    text-shadow: 1px 1px 2px $black;
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+    z-index: 2;
+
+    &:hover {
+      opacity: 1;
+      background: transparentize($color: $black, $amount: 0.5);
+    }
+  }
+
+  &--icon {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 10px 0;
+    background-color: transparent;
+    transition: color 0.25s ease-in-out;
+
+    svg {
+      flex-shrink: 0;
+      margin-right: 15px;
+      fill: $blue;
+    }
+
+    &:hover {
+      color: $blue;
+      background-color: transparent;
+    }
+  }
+
+  &--icon-alert {
+    svg {
+      fill: $red;
+    }
+
+    &:hover {
+      color: $red;
+    }
+  }
+}

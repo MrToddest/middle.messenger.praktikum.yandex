@@ -1,0 +1,70 @@
+.form-field {
+  position: relative;
+
+  &__label {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 13px;
+    text-align: left;
+    position: absolute;
+    top: 7px;
+    left: 0;
+    color: $grey2;
+    pointer-events: none;
+    transition: all 0.25s ease;
+
+    .hasValue & {
+      font-size: 10px;
+      line-height: 10px;
+      top: -10px;
+    }
+  }
+
+  &__msg {
+    font-size: 8px;
+    line-height: 8px;
+    text-align: left;
+    display: block;
+    padding-top: 7px;
+
+    .isError & {
+      color: $red;
+    }
+  }
+
+  &--file {
+    input {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      z-index: 1;
+      cursor: pointer;
+    }
+
+    .form-field__label {
+      position: relative;
+      top: auto;
+      display: inline-block;
+      padding: 0 70px;
+      text-align: center;
+      text-decoration: underline;
+      line-height: 1.2;
+      color: $blue;
+
+      &.hasFile {
+        text-decoration: none;
+        color: $grey2;
+      }
+    }
+
+    &.hasValue {
+      .form-field__label {
+        font-size: 13px;
+        line-height: 1.2;
+        top: auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+include mixins/ChatListItem/ChatListItem
+
+nav.chat-list
+  if chats
+    each item in chats
+      +chatListItem(item)
+  div.chat-list__footer
+    | !{addChat}

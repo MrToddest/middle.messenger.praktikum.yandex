@@ -1,20 +1,14 @@
-import Block from '@/utils/Block';
-import renderDOM from '@/utils/renderDOM';
+import { PAGES } from 'src/constants';
 
-import template from './index.tpl.pug';
+import router from 'src/router/router';
+import AuthController from 'src/controllers/AuthController';
 
-class IndexPage extends Block {
-  constructor() {
-    super();
-  }
+document.addEventListener('DOMContentLoaded', async () => {
+  PAGES.forEach((page) => {
+    router.use(page.path, page.block, page.props);
+  });
 
-  render() {
-    return this.compile(template, {});
-  }
-}
+  router.start();
 
-document.addEventListener('DOMContentLoaded', () => {
-  const page = new IndexPage();
-
-  renderDOM('#app', page);
+  await AuthController.getUser();
 });

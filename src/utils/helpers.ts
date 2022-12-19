@@ -15,3 +15,21 @@ export const inputHasValue = (input?: HTMLInputElement | null): boolean => {
 
   return false;
 };
+
+export const openModal = (id: string): void => {
+  const modal = document.getElementById(id);
+
+  if (!modal) return;
+
+  addClass('active', modal);
+};
+
+export const closeModal = (id: string, event?: Event): void => {
+  const target = event ? event.target : null;
+  const modal = document.getElementById(id);
+
+  if (!modal) return;
+
+  if (target === modal) removeClass('active', modal);
+  if (target === null) removeClass('active', modal);
+};

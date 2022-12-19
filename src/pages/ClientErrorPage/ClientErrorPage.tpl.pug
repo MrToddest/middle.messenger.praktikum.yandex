@@ -1,0 +1,10 @@
+include ../../ui/mixins/section/section.pug
+include ../../ui/mixins/error-page/error-page.pug
+
+- var errorTitle = '404'
+- var errorDesc = 'Не туда попали'
+- var errorUrl = '/'
+
+main
+  +section()
+    +errorPage(errorTitle, errorDesc, errorUrl)

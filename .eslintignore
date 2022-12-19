@@ -3,6 +3,7 @@
 
 # production
 /dist
+/test
 
 # debug
 npm-debug.log*
@@ -16,3 +17,4 @@ yarn-error.log*
 
 # other
 server.js
+/mock

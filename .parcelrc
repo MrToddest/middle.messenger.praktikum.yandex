@@ -1,6 +1,5 @@
 {
   "extends": ["@parcel/config-default"],
-  "resolvers": ["...", "@deeppines/parcel-resolver-root"],
   "transformers": {
     "*.pug": ["parcel-transformer-pug-precompile"],
     "*.svg": ["parcel-transformer-svg-sprite"]

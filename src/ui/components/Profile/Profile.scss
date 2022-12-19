@@ -1,0 +1,77 @@
+.profile {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 13px;
+  width: 100%;
+  max-width: 510px;
+  margin: auto;
+  padding: 60px 0;
+
+  &__header,
+  &__main {
+    margin-bottom: 50px;
+  }
+
+  &__footer {
+    text-align: center;
+
+    .button {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__img {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 20px;
+    background-color: $grey;
+
+    img {
+      position: relative;
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      z-index: 1;
+    }
+  }
+
+  &__img-plug {
+    position: absolute;
+    font-size: 40px;
+    line-height: 1;
+    z-index: 0;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    text-align: center;
+    color: $white;
+  }
+
+  &__field {
+    position: relative;
+    display: flex;
+    justify-content: end;
+    width: 100%;
+
+    .input {
+      margin-bottom: 12px;
+    }
+
+    .form-field__msg {
+      position: absolute;
+      top: 23px;
+      right: 0;
+      padding-top: 0;
+      text-align: right;
+    }
+  }
+}

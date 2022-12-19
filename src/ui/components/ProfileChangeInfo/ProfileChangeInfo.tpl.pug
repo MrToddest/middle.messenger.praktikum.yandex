@@ -1,0 +1,25 @@
+include ../../mixins/profile-item/profile-item
+
+form.profile
+  .profile__header
+    .profile__img
+      span.profile__img-plug= plug
+      if avatar
+        img(src= `https://ya-praktikum.tech/api/v2/resources${avatar}`, alt="avatar")
+    h1.profile__title= `${first_name} ${second_name}`
+  .profile__main
+    +profileItem('Почта')
+      | !{email}
+    +profileItem('Логин')
+      | !{login}
+    +profileItem('Имя')
+      | !{firstName}
+    +profileItem('Фамилия')
+      | !{secondName}
+    +profileItem('Имя в чате')
+      | !{displayName}
+    +profileItem('Телефон')
+      | !{phone}
+  .profile__footer
+      | !{saveButton}
+      | !{escLink}

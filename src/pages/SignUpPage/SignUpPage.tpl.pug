@@ -1,0 +1,8 @@
+include ../../ui/mixins/section/section.pug
+include ../../ui/mixins/modal/modal.pug
+
+- var modalTitle = 'Регистрация'
+
+main
+  +section()
+    +modal(modalTitle) !{form}

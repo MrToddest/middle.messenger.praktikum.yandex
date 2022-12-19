@@ -9,30 +9,30 @@
 @import 'core/typography';
 
 // layout
-@import '../../ui/layouts/ui/ui';
-@import '../../ui/layouts/default/default';
 @import '../../ui/layouts/chat/chat';
 
 // elements
-@import '../../ui/elements/link/link';
-@import '../../ui/elements/button/button';
-@import '../../ui/elements/input/input';
+@import '../../ui/elements/Link/Link';
+@import '../../ui/elements/Button/Button';
+@import '../../ui/elements/Input/Input';
+
+// mixins
+@import '../../ui/mixins/error-page/error-page';
+@import '../../ui/mixins/section/section';
+@import '../../ui/mixins/modal/modal';
+@import '../../ui/mixins/chat-view/chat-view';
+@import '../../ui/mixins/message-item/message-item';
+@import '../../ui/mixins/profile-item/profile-item';
 
 // components ui
-@import '../../ui/components/ui-list/ui-list';
-@import '../../ui/components/error-page/error-page';
-@import '../../ui/components/section/section';
-@import '../../ui/components/modal/modal';
-@import '../../ui/components/form/form';
-@import '../../ui/components/form-field/form-field';
-@import '../../ui/components/profile/profile';
-@import '../../ui/components/profile-item/profile-item';
-@import '../../ui/components/header/header';
-@import '../../ui/components/search/search';
-@import '../../ui/components/chat-list/chat-list';
-@import '../../ui/components/chat-view/chat-view';
-@import '../../ui/components/chat-header/chat-header';
-@import '../../ui/components/chat-footer/chat-footer';
-@import '../../ui/components/message-form/message-form';
-@import '../../ui/components/message-view/message-view';
-@import '../../ui/components/message-item/message-item';
+@import '../../ui/components/Form/Form';
+@import '../../ui/components/FormField/FormField';
+@import '../../ui/components/Profile/Profile';
+@import '../../ui/components/Header/Header';
+@import '../../ui/components/Search/Search';
+@import '../../ui/components/ChatList/ChatList';
+@import '../../ui/components/ChatHeader/ChatHeader';
+@import '../../ui/components/ChatFooter/ChatFooter';
+@import '../../ui/components/MessageForm/MessageForm';
+@import '../../ui/components/MessageView/MessageView';
+@import '../../ui/components/ModalBackdrop/ModalBackdrop';

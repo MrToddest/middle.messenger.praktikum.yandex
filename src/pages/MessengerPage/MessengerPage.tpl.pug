@@ -1,0 +1,15 @@
+extends ../../ui/layouts/chat/chat.pug
+
+block mixins
+  include ../../ui/mixins/chat-view/chat-view
+
+block sidebar
+  | !{header}
+  | !{chats}
+  | !{addChatModal}
+
+block content
+  +chatView()
+    | !{chatHeader}
+    | !{messageView}
+    | !{chatFooter}

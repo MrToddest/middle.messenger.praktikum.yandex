@@ -1,0 +1,8 @@
+mixin message(item, type)
+  .message-item(
+    class= type === 'inbox' ? 'message-item--inbox' : 'message-item--outbox'
+  )= item.content
+    span(class='message-item__info')
+      if item.is_read === 'true'
+        span(class='message-item__sended')
+      span(class='message-item__date')= item.time

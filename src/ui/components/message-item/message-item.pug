@@ -1,9 +1,0 @@
-mixin message(item)
-  .message-item(
-    class= item.type === 'inbox' ? 'message-item--inbox' : 'message-item--outbox'
-  )= item.value
-    span(class='message-item__info')
-      if item.sended
-        span(class='message-item__sended')
-          //- <object data="../assets/icons/icon-sended.svg" title="sended"></object>
-      span(class='message-item__date')= item.date

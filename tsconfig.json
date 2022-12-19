@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "src/*": ["./src/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
@@ -29,5 +29,15 @@
     "sourceMap": true,
   },
   "exclude": ["node_modules", "dist", "server.js"],
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts"],
+  "ts-node": {
+    "require": ["tsconfig-paths/register"],
+    "compilerOptions": {
+      "module": "commonjs",
+    },
+    "files": true,
+  },
+  "files": [
+    "src/types/mocha-jsdom.d.ts"
+  ]
 }

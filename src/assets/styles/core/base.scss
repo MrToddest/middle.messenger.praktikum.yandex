@@ -3,8 +3,14 @@
 }
 
 html,
-body {
+body,
+main {
   height: 100%;
+}
+
+main {
+  display: flex;
+  width: 100%;
 }
 
 #app {
@@ -25,7 +31,8 @@ html {
 body {
   position: relative;
   display: block;
-  background-color: #fff;
+  background: $black-light;
+  color: $white;
 }
 
 button {
@@ -83,4 +90,8 @@ li {
 
 object {
   pointer-events: none;
+}
+
+.hidden {
+  visibility: hidden;
 }
