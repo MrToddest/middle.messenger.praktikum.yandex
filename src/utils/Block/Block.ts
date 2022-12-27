@@ -199,14 +199,18 @@ class Block {
 
     fragment.innerHTML = htmlString;
 
-    Object.entries(this.childrens).forEach(([, child]) => {
+    Object.entries(this.childrens).forEach(([_, child]) => {
+      let auto = child.getContent()?.children.item(0) as HTMLElement
+      if(auto!= null && context.items != null){
+        let attrObj = context.items.find((x:any) => x.key.replace('_', '')  == _.toLowerCase());
+        attrObj!= null ? auto.setAttribute('value', attrObj.value!=null?attrObj.value:'') : auto.setAttribute('value', '');
+      }
       const stub = fragment.content.querySelector(`[data-id="id-${child.id}"]`);
 
       if (!stub) return;
 
       stub.replaceWith(child.getContent() as HTMLElement);
     });
-
     return fragment.content;
   }
 }

@@ -1,43 +1,19 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
       "src/*": ["./src/*"]
     },
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "alwaysStrict": true,
-    "skipLibCheck": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "strictPropertyInitialization": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
+    "sourceMap": false,
+    "declaration": true,
     "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": false,
-    "noUnusedLocals": true,
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noUnusedParameters": true,
-    "sourceMap": true,
+    "target": "ES2015",
+    "typeRoots": ["node_modules/@types"],
+    "downlevelIteration": true,
+    "esModuleInterop": true,
+    "module": "ESNext",
   },
   "exclude": ["node_modules", "dist", "server.js"],
   "include": ["src/**/*.ts"],
-  "ts-node": {
-    "require": ["tsconfig-paths/register"],
-    "compilerOptions": {
-      "module": "commonjs",
-    },
-    "files": true,
-  },
-  "files": [
-    "src/types/mocha-jsdom.d.ts"
-  ]
 }

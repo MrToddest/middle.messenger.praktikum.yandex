@@ -1,4 +1,4 @@
-import Block from 'src/utils/Block/Block';
+import Block from '../../utils/Block/Block';
 
 import { Router } from './Router';
 
