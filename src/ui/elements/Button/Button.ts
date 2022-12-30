@@ -13,7 +13,7 @@ interface IButton {
   events?: TEvents;
 }
 
-class Button extends Block {
+class Button extends Block<Record<string, any>> {
   constructor(props: IButton) {
     super(props);
   }

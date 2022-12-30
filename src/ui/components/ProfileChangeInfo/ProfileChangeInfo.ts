@@ -12,11 +12,13 @@ import FormField from 'src/ui/components/FormField/FormField';
 import template from './ProfileChangeInfo.tpl.pug';
 
 import { withUser } from 'src/hoc/withUser';
+import { getProfileItems } from 'src/utils/getProfileItems';
+import { IUser } from 'src/types';
 
 interface IProfileChangeInfo {
   events?: TEvents;
 }
-class ProfileChangeInfo extends Block {
+class ProfileChangeInfo extends Block<Record<string, any>> {
   constructor(props: IProfileChangeInfo) {
     super(props);
   }
@@ -110,7 +112,8 @@ class ProfileChangeInfo extends Block {
 
   render() {
     return this.compile(template, {
-      plug: getAvatarPlug(this.props),
+      items: getProfileItems(this.props as IUser),
+      plug: getAvatarPlug(this.props as IUser),
       ...this.props,
     });
   }

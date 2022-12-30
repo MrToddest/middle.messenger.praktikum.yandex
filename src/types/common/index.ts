@@ -9,6 +9,6 @@ export type Indexed<T = unknown> = {
 };
 export interface IPage {
   path: PagePaths | PagePaths[];
-  block: typeof Block;
+  block: new () => Block<Record<string, any>>;
   props?: Record<string, unknown>;
 }

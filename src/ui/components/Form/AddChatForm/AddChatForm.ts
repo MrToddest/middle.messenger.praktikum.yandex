@@ -11,7 +11,7 @@ interface IAddChatForm {
   events?: TEvents;
 }
 
-class AddChatForm extends Block {
+class AddChatForm extends Block<Record<string, any>> {
   constructor(props: IAddChatForm) {
     super(props);
   }

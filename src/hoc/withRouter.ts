@@ -2,7 +2,7 @@ import Block from 'src/utils/Block/Block';
 
 import router from 'src/router/router';
 
-function withRouter(Component: typeof Block) {
+function withRouter(Component: typeof Block<Record<string, any>>) {
   return class WithRouter extends Component {
     public static componentName = Component.name;
 

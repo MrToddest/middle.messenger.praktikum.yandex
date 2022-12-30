@@ -12,7 +12,7 @@ interface IModalBackdrop {
   modalContent?: Block;
 }
 
-class ModalBackdrop extends Block {
+class ModalBackdrop extends Block<Record<string, any>> {
   constructor(props: IModalBackdrop) {
     super(props);
   }

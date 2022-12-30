@@ -20,7 +20,7 @@ export interface IInput {
   autocomplete?: 'on' | 'off';
 }
 
-class Input extends Block {
+class Input extends Block<Record<string, any>> {
   constructor(props: IInput) {
     super(props);
   }

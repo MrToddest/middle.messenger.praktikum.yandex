@@ -5,11 +5,11 @@ import { formDataToObject } from 'src/utils/formDataToObject';
 
 import AuthController from 'src/controllers/AuthController';
 
-import SignupForm from 'src/ui/components/form/SignupForm/SignupForm';
+import SignupForm from 'src/ui/components/Form/SignupForm/SignupForm';
 
 import template from './SignUpPage.tpl.pug';
 
-class SignUpPage extends Block {
+class SignUpPage extends Block<Record<string, any>> {
   protected initChildren() {
     this.childrens.form = new SignupForm({
       events: {

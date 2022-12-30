@@ -16,7 +16,7 @@ module.exports = {
     sourceType: 'module',
     tsconfigRootDir: __dirname,
   },
-  ignorePatterns: ['node_modules/*', '.parcel-cache/*', '.eslintrc.js', 'mock-server/*'],
+  ignorePatterns: ['node_modules/*', '.eslintrc.js', 'mock-server/*'],
   rules: {
     '@typescript-eslint/no-explicit-any': 0,
     'import/prefer-default-export': 0,

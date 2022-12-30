@@ -12,15 +12,15 @@ import FormField from 'src/ui/components/FormField/FormField';
 import template from './ProfileChangePassword.tpl.pug';
 
 import { withUser } from 'src/hoc/withUser';
+import { IUser } from 'src/types';
 
-interface IProfileChangePassword {
+interface IProfileChangePassword  {
   events?: TEvents;
 }
-class ProfileChangePassword extends Block {
+class ProfileChangePassword extends Block<IProfileChangePassword> {
   constructor(props: IProfileChangePassword) {
     super(props);
   }
-
   protected initChildren() {
     this.childrens.escLink = new Link({
       url: '/profile',
@@ -78,7 +78,7 @@ class ProfileChangePassword extends Block {
 
   render() {
     return this.compile(template, {
-      plug: getAvatarPlug(this.props),
+      plug: getAvatarPlug(this.props as IUser),
       ...this.props,
     });
   }

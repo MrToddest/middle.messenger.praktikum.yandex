@@ -14,7 +14,7 @@ interface ISigninForm {
   events?: TEvents;
 }
 
-class SigninForm extends Block {
+class SigninForm extends Block<Record<string, any>> {
   constructor(props: ISigninForm) {
     super(props);
   }

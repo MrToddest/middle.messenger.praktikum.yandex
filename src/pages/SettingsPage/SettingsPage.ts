@@ -12,7 +12,7 @@ import template from './SettingsPage.tpl.pug';
 
 import arrowLeft from 'src/assets/icons/arrow-left.svg';
 
-class SettingsPage extends Block {
+class SettingsPage extends Block<Record<string, any>> {
   protected initChildren() {
     this.childrens.profileChangeInfo = new ProfileChangeInfo({
       events: {
@@ -21,7 +21,7 @@ class SettingsPage extends Block {
     });
 
     this.childrens.icon = new Icon({
-      id: arrowLeft,
+      id: arrowLeft.id,
       width: 24,
       height: 24,
     });

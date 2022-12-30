@@ -74,9 +74,18 @@ class HTTPTransport {
       }
 
       if (method === Method.GET || !data) {
-        xhr.send();
+        try {
+          xhr.send();  
+        } catch (error) {
+          console.log('error', error)
+        }
+        
       } else {
-        xhr.send(isPlainObject(data) ? JSON.stringify(data) : data);
+        try {
+          xhr.send(isPlainObject(data) ? JSON.stringify(data) : data);
+        } catch (error) {
+          console.log('error', error)
+        }
       }
     });
   }

@@ -1,4 +1,4 @@
-import Block from 'src/utils/Block/Block';
+import Block from '../../utils/Block/Block';
 
 import { Router } from './Router';
 
@@ -13,7 +13,7 @@ describe('Router', () => {
 
   const template = () => `<div><h1>Template</h1><div>`;
 
-  class BasePage extends Block {
+  class BasePage extends Block<Record<string, any>>{
     constructor() {
       super();
 
@@ -31,7 +31,6 @@ describe('Router', () => {
     const root = document.createElement('div');
     root.setAttribute('id', 'app');
     document.body.appendChild(root);
-
     router = new Router();
     router.use('/', BasePage, { title: 'Главная' });
     router.use('/article', BasePage, { title: 'Статья' });

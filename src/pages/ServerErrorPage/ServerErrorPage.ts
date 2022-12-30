@@ -2,7 +2,7 @@ import Block from 'src/utils/Block/Block';
 
 import template from './ServerErrorPage.tpl.pug';
 
-class ServerErrorPage extends Block {
+class ServerErrorPage extends Block<Record<string, any>> {
   constructor() {
     super();
   }

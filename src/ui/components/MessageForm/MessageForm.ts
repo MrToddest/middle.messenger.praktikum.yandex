@@ -15,7 +15,7 @@ import arrowLeft from 'src/assets/icons/arrow-left.svg';
 interface IMessageForm {
   events?: TEvents;
 }
-class MessageForm extends Block {
+class MessageForm extends Block<Record<string, any>> {
   constructor(props: IMessageForm) {
     super(props);
   }
@@ -35,7 +35,7 @@ class MessageForm extends Block {
       name: 'send',
       classes: 'button--rounded button--back message-form__send',
       block: new Icon({
-        id: arrowLeft,
+        id: arrowLeft.id,
         width: 24,
         height: 24,
       }),

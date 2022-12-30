@@ -11,14 +11,14 @@ import iconSearch from 'src/assets/icons/icon-search.svg';
 interface ISearch {
   events?: TEvents;
 }
-class Search extends Block {
+class Search extends Block<Record<string, any>> {
   constructor(props: ISearch) {
     super(props);
   }
 
   protected initChildren() {
     this.childrens.icon = new Icon({
-      id: iconSearch,
+      id: iconSearch.id,
       width: 20,
       height: 20,
     });

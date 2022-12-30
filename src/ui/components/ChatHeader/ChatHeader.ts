@@ -19,14 +19,14 @@ import iconSettings from 'src/assets/icons/icon-settings.svg';
 import iconTrash from 'src/assets/icons/icon-trash.svg';
 import { withActiveChat } from 'src/hoc';
 
-class ChatHeader extends Block {
+class ChatHeader extends Block<Record<string, any>> {
   protected initChildren() {
     this.childrens.settings = new Button({
       type: 'button',
       name: 'settings',
       classes: 'chat-header__button',
       block: new Icon({
-        id: iconSettings,
+        id: iconSettings.id,
         width: 3,
         height: 16,
       }),
@@ -41,7 +41,7 @@ class ChatHeader extends Block {
       text: 'Добавить пользователя',
       classes: 'button--icon',
       block: new Icon({
-        id: iconAdd,
+        id: iconAdd.id,
         width: 22,
         height: 22,
       }),
@@ -56,7 +56,7 @@ class ChatHeader extends Block {
       text: 'Удалить пользователя',
       classes: 'button--icon',
       block: new Icon({
-        id: iconCrossCircle,
+        id: iconCrossCircle.id,
         width: 22,
         height: 22,
       }),
@@ -71,7 +71,7 @@ class ChatHeader extends Block {
       text: 'Удалить чат',
       classes: 'button--icon button--icon-alert',
       block: new Icon({
-        id: iconTrash,
+        id: iconTrash.id,
         width: 20,
         height: 20,
       }),

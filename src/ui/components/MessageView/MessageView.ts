@@ -11,7 +11,7 @@ interface IMessageView {
   data: IMessageItem[];
 }
 
-class MessageView extends Block {
+class MessageView extends Block<Record<string, any>> {
   constructor(props: IMessageView) {
     super(props);
   }

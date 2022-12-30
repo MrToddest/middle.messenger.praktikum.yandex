@@ -4,7 +4,7 @@ import { isEqual } from 'src/utils/isEqual';
 import store, { IState, StoreEvents } from 'src/store/Store';
 
 const withStore =
-  (mapStateToProps: (state: IState) => Record<string, unknown>) => (Component: typeof Block) => {
+  (mapStateToProps: (state: IState) => Record<string, unknown>) => (Component: typeof Block<Record<string, any>>) => {
     let state: Record<string, unknown>;
 
     return class extends Component {

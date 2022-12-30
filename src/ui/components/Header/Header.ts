@@ -9,14 +9,14 @@ import template from './Header.tpl.pug';
 
 import arrowRight from 'src/assets/icons/arrow-right.svg';
 
-class Header extends Block {
+class Header extends Block<Record<string, any>> {
   protected initChildren() {
     this.childrens.link = new Link({
       url: '/profile',
       name: 'Профиль',
       mod: 'link--grey link--icon',
       block: new Icon({
-        id: arrowRight,
+        id: arrowRight.id,
         width: 6,
         height: 10,
       }),

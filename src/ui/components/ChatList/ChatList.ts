@@ -14,7 +14,7 @@ interface IChatList {
   events?: TEvents;
 }
 
-class ChatList extends Block {
+class ChatList extends Block<Record<string, any>> {
   constructor(props: IChatList) {
     super(props);
   }
@@ -31,7 +31,8 @@ class ChatList extends Block {
   }
 
   render() {
-    return this.compile(template, { ...this.props });
+    console.log('сын собаки', this.props)
+    return this.compile(template, { ...this.props }, 'assa');
   }
 }
 
