@@ -21,6 +21,11 @@
     "mock": "node ./mock/server.js",
     "lint": "tsc --noEmit && eslint --fix ./src/**/*.ts && npx stylelint ./src/**/*.scss --fix"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test && npm run lint"
+    }
+  },
   "dependencies": {
     "normalize.css": "^8.0.1"
   },

@@ -9,7 +9,7 @@ import template from './Header.tpl.pug';
 
 import arrowRight from 'src/assets/icons/arrow-right.svg';
 
-class Header extends Block {
+class Header extends Block<Record<string, any>> {
   protected initChildren() {
     this.childrens.link = new Link({
       url: '/profile',

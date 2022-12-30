@@ -17,7 +17,7 @@ interface IDelChatForm {
   events?: TEvents;
 }
 
-class DelChatForm extends Block {
+class DelChatForm extends Block<Record<string, any>> {
   constructor(props: IDelChatForm) {
     super(props);
   }

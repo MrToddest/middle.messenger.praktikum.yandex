@@ -9,7 +9,7 @@ interface ILink {
   block?: Block;
 }
 
-class Link extends Block {
+class Link extends Block<Record<string, any>> {
   constructor(props: ILink) {
     super(props);
   }

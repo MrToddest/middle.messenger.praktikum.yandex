@@ -20,7 +20,7 @@ export class Router {
     Router.__instance = this;
   }
 
-  public use(pathname: string | string[], block: typeof Block, props?: any) {
+  public use(pathname: string | string[], block: new () => Block<Record<string, any>>, props?: any) {
     if (Array.isArray(pathname)) {
       pathname.map((path) => {
         const route = new Route(path, block, { ...props, rootQuery: APP_SELECTOR });

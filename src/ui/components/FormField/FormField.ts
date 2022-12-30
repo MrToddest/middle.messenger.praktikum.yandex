@@ -17,7 +17,7 @@ interface IFormField {
   events?: TEvents;
 }
 
-class FormField extends Block {
+class FormField extends Block<Record<string, any>> {
   constructor(props: IFormField) {
     super(props);
 

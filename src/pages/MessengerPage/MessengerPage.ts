@@ -18,7 +18,7 @@ import template from './MessengerPage.tpl.pug';
 
 import store from 'src/store/Store';
 
-class MessengerPage extends Block {
+class MessengerPage extends Block<Record<string, any>> {
   protected initChildren() {
     this.childrens.header = new Header();
 

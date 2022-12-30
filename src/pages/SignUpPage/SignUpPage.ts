@@ -9,7 +9,7 @@ import SignupForm from 'src/ui/components/Form/SignupForm/SignupForm';
 
 import template from './SignUpPage.tpl.pug';
 
-class SignUpPage extends Block {
+class SignUpPage extends Block<Record<string, any>> {
   protected initChildren() {
     this.childrens.form = new SignupForm({
       events: {

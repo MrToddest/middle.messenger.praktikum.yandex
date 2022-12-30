@@ -11,8 +11,9 @@ import Link from 'src/ui/elements/Link/Link';
 import template from './Profile.tpl.pug';
 
 import { withUser } from 'src/hoc/withUser';
+import { IUser } from 'src/types';
 
-class Profile extends Block {
+class Profile extends Block<Record<string, any>> {
   protected initChildren() {
     this.childrens.changeInfoLink = new Link({
       url: '/settings',
@@ -47,8 +48,8 @@ class Profile extends Block {
 
   render() {
     return this.compile(template, {
-      items: getProfileItems(this.props),
-      plug: getAvatarPlug(this.props),
+      items: getProfileItems(this.props as IUser),
+      plug: getAvatarPlug(this.props as IUser),
       ...this.props,
     });
   }

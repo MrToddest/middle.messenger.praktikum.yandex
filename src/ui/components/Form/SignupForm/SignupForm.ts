@@ -14,7 +14,7 @@ interface ISignupForm {
   events?: TEvents;
 }
 
-class SignupForm extends Block {
+class SignupForm extends Block<Record<string, any>> {
   constructor(props: ISignupForm) {
     super(props);
   }

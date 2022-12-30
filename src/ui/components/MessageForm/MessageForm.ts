@@ -15,7 +15,7 @@ import arrowLeft from 'src/assets/icons/arrow-left.svg';
 interface IMessageForm {
   events?: TEvents;
 }
-class MessageForm extends Block {
+class MessageForm extends Block<Record<string, any>> {
   constructor(props: IMessageForm) {
     super(props);
   }

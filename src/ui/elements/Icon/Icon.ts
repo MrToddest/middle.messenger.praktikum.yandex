@@ -8,7 +8,7 @@ interface IIcon {
   height: number;
 }
 
-class Icon extends Block {
+class Icon extends Block<Record<string, any>> {
   constructor(props: IIcon) {
     super(props);
   }

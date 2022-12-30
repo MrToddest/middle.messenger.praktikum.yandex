@@ -13,7 +13,7 @@ interface IChangeAvatarForm {
   events?: TEvents;
 }
 
-class ChangeAvatarForm extends Block {
+class ChangeAvatarForm extends Block<Record<string, any>> {
   constructor(props: IChangeAvatarForm) {
     super(props);
   }

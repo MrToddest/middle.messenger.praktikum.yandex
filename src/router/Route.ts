@@ -4,11 +4,11 @@ import { updatePageTitle } from '../utils/updatePageTitle/updatePageTitle';
 
 export default class Route {
   private pathname: string;
-  private blockClass: typeof Block;
-  private block: Block | null;
+  private blockClass: new () => Block<Record<string, any>>;
+  private block: Block<Record<string, any>> | null;
   private props: any;
 
-  constructor(pathname: string, view: typeof Block, props: any) {
+  constructor(pathname: string, view: new () => Block<Record<string, any>>, props: any) {
     this.pathname = pathname;
     this.blockClass = view;
     this.block = null;

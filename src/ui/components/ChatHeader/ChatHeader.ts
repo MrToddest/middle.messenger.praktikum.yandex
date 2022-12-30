@@ -19,7 +19,7 @@ import iconSettings from 'src/assets/icons/icon-settings.svg';
 import iconTrash from 'src/assets/icons/icon-trash.svg';
 import { withActiveChat } from 'src/hoc';
 
-class ChatHeader extends Block {
+class ChatHeader extends Block<Record<string, any>> {
   protected initChildren() {
     this.childrens.settings = new Button({
       type: 'button',

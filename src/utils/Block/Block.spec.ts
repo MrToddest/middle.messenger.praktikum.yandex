@@ -10,7 +10,7 @@ describe('Block (Component)', () => {
 
   const template = () => `<div><h1>Template</h1><div>`;
 
-  class TestBlock extends Block {
+  class TestBlock extends Block<Record<string, any>> {
     constructor() {
       super();
 

@@ -3,7 +3,7 @@ import { isEqual } from '../isEqual';
 
 import { nanoid } from 'nanoid';
 
-class Block {
+export abstract class Block<Props extends Record<string, any> = unknown> {
   static EVENTS = {
     INIT: 'init',
     FLOW_CDM: 'flow:component-did-mount',
@@ -15,8 +15,8 @@ class Block {
 
   private _element: HTMLElement | null = null;
 
-  protected props: any;
-  protected childrens: Record<string, Block>;
+  protected props: Props;
+  protected childrens: Record<string, Block<any>>;
   private eventBus: () => EventBus;
 
   /** JSDoc
@@ -30,7 +30,8 @@ class Block {
     const { props, childrens } = this.getChildren(propsAndChildrens);
 
     this.childrens = childrens;
-
+    
+    // @ts-ignore
     this.props = this._makePropsProxy(props);
 
     this.initChildren();
@@ -40,7 +41,9 @@ class Block {
 
     eventBus.emit(Block.EVENTS.INIT);
   }
-
+  public static createInstance<Props extends Record<string, any> = unknown>(props: Props): Block<Props> {
+    throw new Error('Not implemented')
+  }
   private _registerEvents(eventBus: EventBus) {
     eventBus.on(Block.EVENTS.INIT, this.init.bind(this));
     eventBus.on(Block.EVENTS.FLOW_CDM, this._componentDidMount.bind(this));
@@ -61,7 +64,7 @@ class Block {
     return;
   }
 
-  private _componentDidUpdate(oldProps: any, newProps: any) {
+  private _componentDidUpdate(oldProps: Props, newProps: Props) {
     const response = this.componentDidUpdate(oldProps, newProps);
 
     if (!response) return;
@@ -69,13 +72,13 @@ class Block {
     this._render();
   }
 
-  protected componentDidUpdate(oldProps: any, newProps: any) {
+  protected componentDidUpdate(oldProps: Props, newProps: Props) {
     if (!isEqual(oldProps, newProps)) return true;
 
     return false;
   }
 
-  public setProps = (nextProps: any) => {
+  public setProps = (nextProps: Props) => {
     if (!nextProps) {
       return;
     }
@@ -97,7 +100,6 @@ class Block {
 
     if (this._element) {
       this._removeEvents();
-
       this._element.replaceWith(newElement);
     }
 
@@ -114,27 +116,27 @@ class Block {
     return this.element;
   }
 
-  private _makePropsProxy(props: any) {
+  private _makePropsProxy(props: Props) {
+    const self = this;
     return new Proxy(props as unknown as object, {
       get(target: Record<string, unknown>, prop: string) {
         const value = target[prop];
         return typeof value === 'function' ? value.bind(target) : value;
       },
-      set: (target: Record<string, unknown>, prop: string, value: unknown) => {
+      set(target: Record<string, unknown>, prop: string, value: unknown) {
         const oldProps = { ...target };
         target[prop] = value;
-
-        this.eventBus().emit(Block.EVENTS.FLOW_CDU, oldProps, target);
+        self.eventBus().emit(Block.EVENTS.FLOW_CDU, oldProps, target);
         return true;
       },
       deleteProperty() {
-        throw new Error('Нет доступа');
+        throw new Error('Отказано в доступе');
       },
     });
   }
 
   private _removeEvents() {
-    const events: Record<string, () => void> = (this.props as any).events;
+    const events: Record<string, () => void> = (this.props as Props).events;
 
     if (!events || !this._element) return;
 
@@ -169,7 +171,7 @@ class Block {
     if (el) el.style.display = 'none';
   }
 
-  protected getChildren(propsAndChildrens: any) {
+  protected getChildren(propsAndChildrens: Props) {
     const childrens: any = {};
     const props: any = {};
 
@@ -188,9 +190,9 @@ class Block {
     return;
   }
 
-  protected compile(template: (context: any) => string, context: any) {
+  protected compile(template: (context: any) => string, context: any, str: string = null) {
     const fragment = this._createDocumentElement('template') as HTMLTemplateElement;
-
+    console.log('context', context)
     Object.entries(this.childrens).forEach(([key, child]) => {
       context[key] = `<div data-id="id-${child.id}"></div>`;
     });
@@ -207,8 +209,9 @@ class Block {
       }
       const stub = fragment.content.querySelector(`[data-id="id-${child.id}"]`);
 
-      if (!stub) return;
 
+      if (!stub) return;
+      if(str!=null) console.log('child.getContent()', child.getContent())
       stub.replaceWith(child.getContent() as HTMLElement);
     });
     return fragment.content;

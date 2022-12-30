@@ -11,7 +11,7 @@ import template from './ChatFooter.tpl.pug';
 import iconClip from 'src/assets/icons/icon-clip.svg';
 import { withActiveChat } from 'src/hoc';
 
-class ChatFooter extends Block {
+class ChatFooter extends Block<Record<string, any>> {
   protected initChildren() {
     this.childrens.messageForm = new MessageForm({
       events: {

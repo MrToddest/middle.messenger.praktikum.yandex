@@ -12,7 +12,7 @@ import template from './PasswordPage.tpl.pug';
 
 import arrowLeft from 'src/assets/icons/arrow-left.svg';
 
-class PasswordPage extends Block {
+class PasswordPage extends Block<Record<string, any>> {
   protected initChildren() {
     this.childrens.profileChangePassword = new ProfileChangePassword({
       events: {
